@@ -36,8 +36,6 @@ def get_best_shift(img):
 	return shift_x, shift_y
 
 
-
-
 def shift(image, shift_x, shift_y):
 	"""
 	Function to shift image to center it for MNIST dataset
@@ -56,8 +54,6 @@ def shift(image, shift_x, shift_y):
 	warp_affine_matrix = np.float32([[1, 0, shift_x], [0, 1, shift_y]])
 	shifted = cv.warpAffine(image, warp_affine_matrix, (cols, rows))
 	return shifted
-
-
 
 
 def rec_digit(image_path):
@@ -92,7 +88,6 @@ def rec_digit(image_path):
 	while np.sum(gray[:, -1]) == 0:
 		gray = np.delete(gray, -1, 1)
 
-
 	rows, cols = gray.shape
 	
 	# Изменяем размер, чтобы изображение помещалось в box 20x20 pixels
@@ -107,7 +102,6 @@ def rec_digit(image_path):
 		rows = int(round(factor * rows))
 		gray = cv.resize(gray, (cols, rows))
 	
-
 	# Расширяем картинку до 28 пикселей, добавляя черные столбцы и ряды по краям
 	cols_padding = (int(math.ceil((28 - cols) / 2.0)), int(math.floor((28 - cols) / 2.0)))
 	rows_padding = (int(math.ceil((28 - rows) / 2.0)), int(math.floor((28 - rows) / 2.0)))
