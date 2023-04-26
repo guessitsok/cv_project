@@ -49,7 +49,7 @@ optimizer = torch.optim.Adam(model.parameters())
 loaders = {'train': train_dataloader,
            'valid': valid_dataloader}
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+# device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 max_epochs = 50
 accuracy = {'train': [],
