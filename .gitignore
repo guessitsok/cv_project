@@ -1,2 +1,6 @@
 .vscode/
 __pycache__/
+__init__.py
+cv_proj
+MNIST
+.venv
